@@ -2,6 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:light_project/navigation/bloc/navigation_bloc.dart';
+import 'package:light_project/navigation/navigation_view.dart';
+import 'package:light_project/snackBar/bloc/data_bloc.dart';
+import 'package:light_project/snackBar/snack_bar.dart';
 import 'package:light_project/src/routerPage.dart';
 import 'package:light_project/src/timerBloc/timerPage.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -28,6 +33,14 @@ class MyApp extends StatelessWidget {
               title: 'The縮',
             ),
         '/timer': (context) => const TimerPage(),
+        '/snackBar': (context) => BlocProvider(
+              create: (context) => DataBloc(),
+              child: const Home(),
+            ),
+        '/navigation': (context) => BlocProvider(
+              create: (context) => NavigationBloc(),
+              child: const NavigationView(),
+            )
       },
     );
   }
