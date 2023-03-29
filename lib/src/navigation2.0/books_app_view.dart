@@ -1,7 +1,7 @@
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:light_project/navigation2.0/bloc/book_bloc.dart';
+import 'package:light_project/src/navigation2.0/bloc/book_bloc.dart';
 
 class BooksApp extends StatelessWidget {
   const BooksApp({super.key});

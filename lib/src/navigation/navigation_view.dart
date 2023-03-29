@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:light_project/navigation/bloc/navigation_bloc.dart';
+import 'package:light_project/src/navigation/bloc/navigation_bloc.dart';
 
 class NavigationView extends StatelessWidget {
   const NavigationView({super.key});

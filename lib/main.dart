@@ -3,12 +3,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:light_project/navigation/bloc/navigation_bloc.dart';
-import 'package:light_project/navigation/navigation_view.dart';
-import 'package:light_project/navigation2.0/bloc/book_bloc.dart';
-import 'package:light_project/navigation2.0/books_app_view.dart';
-import 'package:light_project/snackBar/bloc/data_bloc.dart';
-import 'package:light_project/snackBar/snack_bar.dart';
+import 'package:light_project/src/navigation/bloc/navigation_bloc.dart';
+import 'package:light_project/src/navigation/navigation_view.dart';
+import 'package:light_project/src/navigation2.0/bloc/book_bloc.dart';
+import 'package:light_project/src/navigation2.0/books_app_view.dart';
+import 'package:light_project/src/snackBar/bloc/data_bloc.dart';
+import 'package:light_project/src/snackBar/snack_bar.dart';
 import 'package:light_project/src/blocCounter/bloc/counter_bloc.dart';
 import 'package:light_project/src/blocCounter/counter_view.dart';
 import 'package:light_project/src/movie/ui/movie_list.dart';
@@ -38,8 +38,8 @@ class MyApp extends StatelessWidget {
               title: 'The縮',
             ),
         '/timer': (context) => const TimerPage(),
-        '/snackBar': (context) => BlocProvider(
-              create: (context) => DataBloc(),
+        '/snackBar': (context) => BlocProvider.value(
+              value: DataBloc(),
               child: const Home(),
             ),
         '/navigation': (context) => BlocProvider(

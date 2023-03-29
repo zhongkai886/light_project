@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:light_project/snackBar/bloc/data_bloc.dart';
+import 'package:light_project/src/snackBar/bloc/data_bloc.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
