@@ -1,5 +1,5 @@
-import 'package:light_project/src/models/item_model.dart';
-import 'package:light_project/src/resources/repository.dart';
+import 'package:light_project/src/movie/models/item_model.dart';
+import 'package:light_project/src/movie/resources/repository.dart';
 import 'package:observable/observable.dart';
 import 'package:rxdart/rxdart.dart';
 

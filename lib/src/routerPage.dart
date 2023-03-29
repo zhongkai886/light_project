@@ -9,7 +9,7 @@ class RouterPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Router')),
       body: ListView.builder(
         padding: const EdgeInsets.all(10),
-        itemCount: 4,
+        itemCount: 7,
         itemBuilder: (context, index) => GestureDetector(
           onTap: () {
             switch (index) {
@@ -24,6 +24,15 @@ class RouterPage extends StatelessWidget {
                 break;
               case 3:
                 Navigator.pushNamed(context, '/navigation');
+                break;
+              case 4:
+                Navigator.pushNamed(context, '/navigation2.0');
+                break;
+              case 5:
+                Navigator.pushNamed(context, '/movie_list');
+                break;
+              case 6:
+                Navigator.pushNamed(context, '/counter');
                 break;
             }
           },

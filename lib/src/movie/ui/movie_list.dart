@@ -1,7 +1,7 @@
 import 'package:countup/countup.dart';
 import 'package:flutter/material.dart';
-import '../models/item_model.dart';
-// import '../blocs/movies_bloc.dart';
+import 'package:light_project/src/movie/models/item_model.dart';
+
 import '../blocs/movies.bloc.dart';
 
 class MovieList extends StatelessWidget {
@@ -12,7 +12,7 @@ class MovieList extends StatelessWidget {
       appBar: AppBar(
         title: Text('Popular Movies'),
       ),
-      body: StreamBuilder(
+      body: StreamBuilder<ItemModel>(
         stream: bloc.allMovies,
         builder: (context, AsyncSnapshot<ItemModel> snapshot) {
           if (snapshot.hasData) {
@@ -62,14 +62,15 @@ class MovieList extends StatelessWidget {
                         top: 225,
                         child: SizedBox(
                           child: Countup(
-                            begin: 0,
-                            end: (snapshot.data?.results[index].vote_count ?? 0)
-                                .toDouble(),
-                            style: TextStyle(fontSize: 28, color: Colors.white),
-                            duration: Duration(milliseconds: 2500),
-                            separator: ',',
-                            curve:Curves.bounceOut
-                          ),
+                              begin: 0,
+                              end: (snapshot.data?.results[index].vote_count ??
+                                      0)
+                                  .toDouble(),
+                              style:
+                                  TextStyle(fontSize: 28, color: Colors.white),
+                              duration: Duration(milliseconds: 2500),
+                              separator: ',',
+                              curve: Curves.bounceOut),
                         ),
                       ),
                     ],

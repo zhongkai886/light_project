@@ -5,8 +5,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:light_project/navigation/bloc/navigation_bloc.dart';
 import 'package:light_project/navigation/navigation_view.dart';
+import 'package:light_project/navigation2.0/bloc/book_bloc.dart';
+import 'package:light_project/navigation2.0/books_app_view.dart';
 import 'package:light_project/snackBar/bloc/data_bloc.dart';
 import 'package:light_project/snackBar/snack_bar.dart';
+import 'package:light_project/src/blocCounter/bloc/counter_bloc.dart';
+import 'package:light_project/src/blocCounter/counter_view.dart';
+import 'package:light_project/src/movie/ui/movie_list.dart';
 import 'package:light_project/src/routerPage.dart';
 import 'package:light_project/src/timerBloc/timerPage.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -40,6 +45,15 @@ class MyApp extends StatelessWidget {
         '/navigation': (context) => BlocProvider(
               create: (context) => NavigationBloc(),
               child: const NavigationView(),
+            ),
+        '/navigation2.0': (context) => BlocProvider(
+              create: (context) => BookBloc(),
+              child: const BooksApp(),
+            ),
+        '/movie_list': (context) => MovieList(),
+        '/counter': (context) => BlocProvider(
+              create: (context) => CounterBloc(),
+              child: CounterView(),
             )
       },
     );

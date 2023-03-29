@@ -2,8 +2,9 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:http/http.dart';
-import 'package:light_project/src/models/item_model.dart';
 import 'dart:async';
+
+import 'package:light_project/src/movie/models/item_model.dart';
 // import 'package:http/http.dart' show Client;
 
 class MovieApiProvider {
@@ -28,8 +29,8 @@ class MovieApiProvider {
           {'api_key': '35d48a1b31f05f5702b63ed127bb25ec'},
         ),
       );
-      
 
+      print(jsonDecode(res2.body));
       return ItemModel.fromJson(jsonDecode(res2.body));
     } catch (e) {
       return Future.error(e);
